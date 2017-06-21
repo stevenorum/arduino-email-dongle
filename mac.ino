@@ -41,7 +41,7 @@ void setup() {
   // Eventual plan is to have the OS be determined based on which button of the USB hub is depressed.
   // The board I'm using should just barely be able to fit inside a Sabrent 4-port USB hub without removing any guts.
   // One of the ports will be swapped and used for the board.
-  // The other three will be active but the LED power lines will be tapped to use as signals to the arduino.
+  // The other three will be active but the port power switches will be tapped to use as signals to the arduino.
   // One button for Mac, one button for Windows, one button for Linux, and one on/off button for the arduino itself.
   // By running at startup, it's easy to re-send the message by powering it down and then back up.
   OS = MAC;
