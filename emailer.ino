@@ -37,11 +37,16 @@ void send_email(String recipient, String subject, String contents) {
     // Send the message
     cmd('n'); _delay(400); // open a new message
     type(recipient); _delay(300); // enter the recipient string
-    tab(); enter(); _delay(300); // tab down to the subject line
+    tab(); enter(); _delay(300); // tab down to the cc line and then the subject line
+    // I've encountered at least one computer that requires an extra tab or enter here to get past the bcc field.
+    // I don't know of a good way to handle this.
+    // If you add an extra enter, you run the risk of putting the subject line in the body of the message.
     type(subject); _delay(300); // enter the subject
     tab(); _delay(400); // tab down to the message body    
     type(contents); enter(); // enter the message contents
     //cmd(KEY_RETURN); // send - Commented out to make it safe to test; uncomment this command to weaponize this.
+    //enter(); // If you add the extra enter above that risks leaving an empty subject line,
+    // you need an extra enter here to accept the "are you sure you want to send this without a subject" warning prompt.
   }
 }
 
